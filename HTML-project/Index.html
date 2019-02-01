@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="javascript/script.js"></script>
+    <link rel="stylesheet" href="css/css.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <header id="header">
+        <nav id="navbar">
+            <li class="nav-links"><a class="nav-link" href="#contact">CONTACT</a></li>
+            <li class="nav-links"><a class="nav-link" href="#skills">SKILLS</a></li>
+            <li class="nav-links"><a class="nav-link" href="#projects">PROJECTS</a></li>
+        </nav>
+    </header>
+
+    <main id="main">
+
+        <div id="info1" class="info-container">
+            <p>info</p>
+            <div id="info2" class="info-content">
+                <p>Apart from frontend-development, I also enjoy other stuff in my free time.</p>
+                <p>I love kitesurfing and wakeboarding. I am an active member within the wakeboarding club (Skåne Wake Park) in Malmö, where I am a board member. Nothing beats being on the sea with a board on your feet. Either with wind in my sail (kitesurfing)
+                    or with the handle in my hand, grinding rails (wakeboarding). If there ever was a true non-subjective answer to happiness, it would be kitesurfing and wakeboarding.
+                </p>
+                <p>I also love being creative. When I'm not at work I love to play the guitar and also draw stuff. Being creative and create something gives me a feeling of satisfaction and a way to express myself.
+                </p>
+            </div>
+        </div>
+
+        <section id="welcome-section">
+            <h1>Hi!<br>I'm Julius, I'm an aspiring frontend-developer</h1>
+            <div class="container">
+                <img id="profile-picture" src="ProfilePic.png" alt="Profile picture" height="200" width="140">
+                <div class="overlay">Hi!<br><br><br><br><br>I'm Julius</div>
+            </div>
+            <p>scroll down and see what I'm all about!</p>
+        </section>
+
+        <section id="projects">
+            <div class="project-tile">
+                <h2>PROJECT LINKS</h2>
+                <a href="https://github.com/KamikazeSloth/MyPortfolio?fbclid=IwAR35QCYKoEOanwfH-mRHxBhh2KBeeQJTzI0JilNmeaoXqkk4GRKMRd0-V0g">
+                    <div class="project-links">
+                        <p>GITHUB</p>
+                    </div>
+                </a>
+                <a href="https://codepen.io/collection/ngRwya/#">
+                    <div class="project-links">
+                        <p>CODEPEN</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>SKILLS</h2>
+            <button class="collapsible">LIST OF SKILLS</button>
+            <div class="content">
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>Javascript</p>
+                <p>Java</p>
+                <p>C#</p>
+                <p>SQL</p>
+            </div>
+        </section>
+
+
+
+        <section id="contact">
+            <h2>CONTACT ME</h2>
+            <div>
+                <div id="linkedin">
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/julius-petersson-858b18158">
+                        <img class="img-grow" src="LinkedIn.png" alt="linkedin-image">
+                    </a>
+                </div>
+                <div id="gmail">
+                    <h3>Gmail</h3>
+                    <img onclick="myFunction()" class="img-grow" src="gmail.png" alt="gmail-image">
+                    <span class="popuptext" id="myPopup">Julius.emil.petersson@gmail.com</span>
+                </div>
+                <div id="phone">
+                    <h3>Phone</h3>
+                    <img class="img-grow" src="phone.jpg" alt="phone-image">
+                    <span class="popuptext" id="phoneNrPopUp">070 867 30 64</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="hidden-div">
+        <h1>What do we use cookies for?</h1>
+        <p>We use cookies (not really, I just wanted to try having a pop up div on my page
+        </p>
+        <br><br>
+        <button class="close-hidden-div" onclick="removeElement()">ACCEPT</button>
+    </div>
+
+    <footer id="footer">
+        <p>© 2019. All Rights Reserved</p>
+    </footer>
+</body>
+
+</html>
+
+<script>
+    /**Expandeble info-div */
+    $('.info-container').click(function() {
+        if ($('.info-content').is(":hidden")) {
+            $('.info-container').hover(function() {
+                $('.info-content').hide();
+                $('.info-container').css('left', '-40px');
+            });
+        }
+        //expand red div width to 200px
+        $('.info-content').animate({
+            width: "500px"
+        }, 0);
+        setTimeout(function() {
+            //after 500 milliseconds expand height to 800px
+            $('.info-content').animate({
+                height: "500px"
+            }, 500);
+        }, 500);
+        setTimeout(function() {
+            //after 1000 milliseconds show textarea (or textbox, span, etc)
+            $('.info-content').find('input[type="p"]').show();
+        }, 0);
+    });
+</script>
